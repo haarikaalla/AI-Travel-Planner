@@ -1,4 +1,4 @@
-# ✈️ AI Travel Planner
+#  AI Travel Planner
 
 [![CI](https://github.com/haarikaalla/AI-Travel-Planner/actions/workflows/ci.yml/badge.svg)](https://github.com/haarikaalla/AI-Travel-Planner/actions)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
@@ -8,25 +8,24 @@
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 > A production-grade multi-agent AI travel planner built with **LangGraph**, **LangChain**, and **Ollama**.  
-> 9 specialized agents. Beautiful dark UI. PDF export. 100% local. Zero cost.
 
 ---
 
-## 🎬 What It Does
+##  What It Does
 
 Enter your destination, duration, budget, and interests — and watch **9 AI agents** collaborate in real time to generate a complete, personalized travel plan including:
 
-- 📅 **Day-by-day itinerary** with timed activities, insider tips & costs
-- 🌤 **Weather & climate** analysis with best months to visit
-- 🏨 **Accommodation options** across budget, mid-range, and luxury
-- 🍜 **Food guide** — must-try dishes, restaurants, markets
-- 💰 **Budget breakdown** with money-saving hacks and tipping culture
-- 🧳 **Smart packing list** tailored to your destination and activities
-- 📄 **PDF + TXT export** of your full itinerary
+-  **Day-by-day itinerary** with timed activities, insider tips & costs
+-  **Weather & climate** analysis with best months to visit
+-  **Accommodation options** across budget, mid-range, and luxury
+-  **Food guide** — must-try dishes, restaurants, markets
+-  **Budget breakdown** with money-saving hacks and tipping culture
+-  **Smart packing list** tailored to your destination and activities
+-  **PDF + TXT export** of your full itinerary
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 User Input
@@ -54,17 +53,17 @@ Beautiful Streamlit UI (6 tabs + PDF download)
 ```
 
 **Key patterns demonstrated:**
-- ✅ Supervisor-worker orchestration
-- ✅ Parallel agent fan-out (5 agents run after researcher)
-- ✅ Agent state sharing via LangGraph `TypedDict`
-- ✅ `Annotated` list merging for parallel outputs
-- ✅ Retry logic with graceful fallback generators
-- ✅ 3-strategy JSON parser (handles messy LLM output)
-- ✅ LangChain + Ollama local LLM integration
+-  Supervisor-worker orchestration
+-  Parallel agent fan-out (5 agents run after researcher)
+-  Agent state sharing via LangGraph `TypedDict`
+-  `Annotated` list merging for parallel outputs
+- Retry logic with graceful fallback generators
+-  3-strategy JSON parser (handles messy LLM output)
+-  LangChain + Ollama local LLM integration
 
 ---
 
-## ⚡ Quick Setup
+## Quick Setup
 
 ### 1. Install Ollama (local LLM — free)
 
@@ -112,11 +111,11 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Open **http://localhost:8501** 🎉
+Open **http://localhost:8501** 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -130,7 +129,7 @@ Open **http://localhost:8501** 🎉
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 AI-Travel-Planner/
@@ -148,7 +147,7 @@ AI-Travel-Planner/
 
 ---
 
-## 🔧 Configuration
+##  Configuration
 
 Copy `.env.example` to `.env` and set your preferred model:
 
@@ -165,7 +164,7 @@ You can also select the model in the UI sidebar — no restart needed.
 
 ---
 
-## 🔍 Troubleshooting
+##  Troubleshooting
 
 | Error | Fix |
 |-------|-----|
@@ -177,7 +176,7 @@ You can also select the model in the UI sidebar — no restart needed.
 
 ---
 
-## 🚀 Resume Impact
+##  Resume Impact
 
 This project showcases:
 
@@ -195,11 +194,6 @@ This project showcases:
 
 ---
 
-## 📄 License
+##  License
 
-MIT — free to use, fork, and build on.
-
----
-
-*Built with LangGraph · LangChain · Ollama · Streamlit · ReportLab*  
-*100% local · 100% free · No API keys needed*
+MIT 
