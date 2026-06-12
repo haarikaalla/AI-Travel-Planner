@@ -65,7 +65,7 @@ Beautiful Streamlit UI (6 tabs + PDF download)
 
 ## Quick Setup
 
-### 1. Install Ollama (local LLM — free)
+### 1. Install Ollama 
 
 ```bash
 # macOS
@@ -90,7 +90,7 @@ ollama pull mistral        # 4.1GB — alternative
 ### 3. Start Ollama
 ```bash
 ollama serve
-# If you see "address already in use" — Ollama is already running ✅
+# If you see "address already in use" — Ollama is already running 
 ```
 
 ### 4. Clone & install
