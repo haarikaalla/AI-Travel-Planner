@@ -1,0 +1,56 @@
+name: CI — Syntax & Import Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Syntax check all Python files
+        run: |
+          python -m py_compile travel_graph.py
+          python -m py_compile pdf_export.py
+          python -m py_compile app.py
+          echo "✅ All files pass syntax check"
+
+      - name: Import & unit tests
+        run: |
+          python - <<'EOF'
+          from travel_graph import build_graph, parse_json, _fb_itinerary, _fb_budget, _fb_food, _fb_packing, _fb_accommodations
+          from pdf_export import generate_pdf
+
+          g = build_graph()
+          assert g is not None
+
+          inp = {'destination':'Paris','duration':3,'budget':'Mid-range ($1000-3000)',
+                 'travelers':2,'interests':['Culture'],'travel_style':'Balanced','special_requests':'None'}
+
+          assert len(_fb_itinerary(inp)) == 3
+          assert 'total_per_person' in _fb_budget(inp)['per_person_breakdown']
+          assert 'restaurants' in _fb_food(inp)
+          assert 'essentials' in _fb_packing(inp)
+          assert len(_fb_accommodations(inp)) == 3
+
+          pdf = generate_pdf({'summary':'Test','overview':{'Destination':'Paris'},
+              'itinerary':_fb_itinerary(inp),'accommodations':_fb_accommodations(inp),
+              'food':_fb_food(inp),'budget':_fb_budget(inp),'weather':{},'packing':_fb_packing(inp)})
+          assert len(pdf) > 1000
+
+          print("✅ All unit tests passed")
+          EOF
