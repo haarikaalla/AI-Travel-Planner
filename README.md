@@ -24,7 +24,7 @@
 
 ---
 
-## 💡 The Problem
+##  The Problem
 
 Ask any chatbot to plan a trip and it will confidently tell you that Reykjavík is pleasant in January, invent a hotel that closed in 2019, and quote an exchange rate from its training cutoff.
 
@@ -106,10 +106,10 @@ Every agent has a deterministic offline fallback. Lose your network mid-run and 
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 <details open>
-<summary><b>🏠 Option A — 100% local &amp; free (Ollama)</b> · <i>no API key, nothing leaves your machine</i></summary>
+<summary><b> Option A — 100% local &amp; free (Ollama)</b> · <i>no API key, nothing leaves your machine</i></summary>
 
 <br>
 
@@ -138,7 +138,7 @@ Open <http://localhost:8501>. **No configuration required** — the app auto-det
 </details>
 
 <details>
-<summary><b>⚡ Option B — fastest inference (Groq free tier)</b> · <i>plans a full trip in seconds</i></summary>
+<summary><b>Option B — fastest inference (Groq free tier)</b> · <i>plans a full trip in seconds</i></summary>
 
 <br>
 
@@ -163,7 +163,7 @@ The sidebar will now list **Groq** as a configured provider. Any provider you ad
 </details>
 
 <details>
-<summary><b>🐳 Option C — Docker (app + Ollama in one command)</b></summary>
+<summary><b> Option C — Docker (app + Ollama in one command)</b></summary>
 
 <br>
 
@@ -190,7 +190,7 @@ docker run -p 8501:8501 --env-file .env ai-travel-planner
 
 ---
 
-## 🔄 How It Works
+##  How It Works
 
 You type **“Kyoto, Japan · 5 days · mid-range · food + culture”**. Here is what actually happens:
 
@@ -518,7 +518,7 @@ Everything is optional. Copy [.env.example](.env.example) to `.env` and set only
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 pip install -r requirements-dev.txt
@@ -548,7 +548,7 @@ CI runs the matrix on Python **3.10 / 3.11 / 3.12** and builds the Docker image 
 
 ---
 
-## ❓ FAQ
+##  FAQ
 
 <details>
 <summary><b>Do I need to pay for anything?</b></summary>
@@ -586,7 +586,7 @@ Small local models are slow. Try Groq (seconds instead of minutes), or a smaller
 
 ---
 
-## 🗺️ Roadmap
+##  Roadmap
 
 - [ ] Flight and rail search integration
 - [ ] Multi-city and multi-country routing
@@ -596,7 +596,7 @@ Small local models are slow. Try Groq (seconds instead of minutes), or a smaller
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome. Please keep the two rules that hold the system together:
 
@@ -610,7 +610,7 @@ pytest -m "not integration" -q && ruff check .
 
 ---
 
-## 🙏 Acknowledgements
+##  Acknowledgements
 
 Built with [LangGraph](https://langchain-ai.github.io/langgraph/), [LangChain](https://python.langchain.com/), [Streamlit](https://streamlit.io/), [Pydantic](https://docs.pydantic.dev/) and [ReportLab](https://www.reportlab.com/).
 
@@ -618,7 +618,7 @@ Real-world data from [Open-Meteo](https://open-meteo.com/) (ERA5 reanalysis, CC-
 
 ---
 
-## 📄 License
+##  License
 
 Released under the **MIT License**.
 
