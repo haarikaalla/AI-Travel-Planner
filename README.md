@@ -365,7 +365,7 @@ Secrets are held as Pydantic `SecretStr`, so a stray log or traceback prints `**
 
 ---
 
-## 🧠 Choose Your Brain
+##  Choose Your Brain
 
 Add a key and the provider appears in the sidebar automatically. Add none and everything still runs on Ollama.
 
@@ -459,12 +459,12 @@ State merging uses `Annotated[list[str], operator.add]` so the five parallel bra
 | 🧠 **Review** | The critic's honest assessment and warnings |
 | 🔍 **Trace** | Per-agent timings, errors, and the live graph diagram |
 
-Plus a **🩺 Test connection** button that verifies your provider before you spend a run, and a real-time tracker driven by actual `stream_travel_planner` events — **no fake `time.sleep()` progress bars**.
+Plus a ** Test connection** button that verifies your provider before you spend a run, and a real-time tracker driven by actual `stream_travel_planner` events — **no fake `time.sleep()` progress bars**.
 
 </details>
 
 <details>
-<summary><b>📚 Use it as a library</b></summary>
+<summary><b> Use it as a library</b></summary>
 
 <br>
 
@@ -499,7 +499,7 @@ for agent_name, update in stream_travel_planner(trip, provider="ollama"):
 
 ---
 
-## ⚙️ Configuration
+##  Configuration
 
 Everything is optional. Copy [.env.example](.env.example) to `.env` and set only what you need.
 
