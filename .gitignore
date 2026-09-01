@@ -36,6 +36,10 @@ Thumbs.db
 *.txt
 outputs/
 
+# ...but dependency manifests are source, not output
+!requirements.txt
+!requirements-dev.txt
+
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb
