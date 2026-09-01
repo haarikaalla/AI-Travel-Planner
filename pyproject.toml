@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-travel-planner"
+version = "2.0.0"
+description = "Multi-agent AI travel planner built on LangGraph with structured outputs and live data grounding"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dynamic = ["dependencies"]
+
+[project.urls]
+Homepage = "https://github.com/haarikaalla/AI-Travel-Planner"
+
+[tool.setuptools]
+py-modules = ["app", "travel_graph", "pdf_export"]
+
+[tool.setuptools.packages.find]
+include = ["travel_planner*"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+# ─────────────────────────────────────────────────────────────
+#  Lint / format
+# ─────────────────────────────────────────────────────────────
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM", "RUF", "S"]
+ignore = [
+    "E501",    # long lines are handled by the formatter
+    "S101",    # asserts are fine in tests
+    "B008",    # Pydantic Field() in defaults is idiomatic
+    "RUF001",  # typographic punctuation is intentional in prompts
+    "RUF002",
+    "RUF003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S", "N806"]
+"app.py" = ["E402"]
+
+# ─────────────────────────────────────────────────────────────
+#  Tests
+# ─────────────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = [
+    "integration: hits a real LLM provider or a live HTTP API (deselect with -m 'not integration')",
+]
+filterwarnings = ["ignore::DeprecationWarning"]
