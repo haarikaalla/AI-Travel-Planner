@@ -20,8 +20,8 @@ import time
 from typing import Annotated, Any, TypedDict
 
 from travel_planner import fallbacks as fb
-from travel_planner.llm import invoke_text
 from travel_planner.llm import invoke_structured as _invoke_structured
+from travel_planner.llm import invoke_text
 from travel_planner.schemas import (
     AccommodationSet,
     BudgetPlan,

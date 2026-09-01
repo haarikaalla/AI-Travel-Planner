@@ -308,7 +308,7 @@ if submitted:
     for row_start in range(0, len(AGENT_META), 5):
         row = AGENT_META[row_start : row_start + 5]
         columns = st.columns(len(row))
-        for column, (key, icon, name, _) in zip(columns, row):
+        for column, (key, icon, name, _) in zip(columns, row, strict=True):
             with column:
                 placeholder = st.empty()
                 placeholders[key] = (placeholder, icon, name)
@@ -786,11 +786,10 @@ if "result" in st.session_state:
             items = packing.get(key) or []
             if not items:
                 continue
-            with columns[index % 2]:
-                with st.container():
-                    st.markdown(f"**{label}**")
-                    for item_index, item in enumerate(items):
-                        st.checkbox(str(item), key=f"pack_{key}_{item_index}")
+            with columns[index % 2], st.container():
+                st.markdown(f"**{label}**")
+                for item_index, item in enumerate(items):
+                    st.checkbox(str(item), key=f"pack_{key}_{item_index}")
 
         clothing = packing.get("clothing") or {}
         if any(clothing.values()):

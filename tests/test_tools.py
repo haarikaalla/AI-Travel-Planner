@@ -25,7 +25,7 @@ def test_requests_to_unlisted_hosts_are_blocked(monkeypatch: pytest.MonkeyPatch)
 
 
 def test_allowlist_is_limited_to_known_public_apis() -> None:
-    assert ALLOWED_HOSTS == frozenset(
+    assert frozenset(
         {
             "geocoding-api.open-meteo.com",
             "archive-api.open-meteo.com",
@@ -33,7 +33,7 @@ def test_allowlist_is_limited_to_known_public_apis() -> None:
             "api.frankfurter.app",
             "en.wikipedia.org",
         }
-    )
+    ) == ALLOWED_HOSTS
 
 
 def test_host_check_accepts_allowed_subdomains_only() -> None:

@@ -124,8 +124,7 @@ def stream_travel_planner(
     for chunk in graph.stream(
         _initial_state(trip_input, provider, model_name), stream_mode="updates"
     ):
-        for agent_name, update in chunk.items():
-            yield agent_name, update
+        yield from chunk.items()
 
 
 def plan_from_result(result: dict[str, Any]) -> TravelPlan:

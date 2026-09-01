@@ -22,9 +22,13 @@ from travel_planner.fallbacks import (
     fb_itinerary,
     fb_packing,
 )
-from travel_planner.graph import _normalise_legacy, build_graph, mermaid_diagram
+from travel_planner.graph import (
+    _normalise_legacy,
+    build_graph,
+    mermaid_diagram,
+    stream_travel_planner,
+)
 from travel_planner.graph import run_travel_planner as _run_travel_planner
-from travel_planner.graph import stream_travel_planner
 from travel_planner.llm import get_chat_model, salvage_json
 from travel_planner.schemas import TripInput
 
